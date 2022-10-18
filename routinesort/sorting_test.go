@@ -31,6 +31,11 @@ func TestSort(t *testing.T) {
 		assert.EqualValues(t, []uint{4, 3, 2, 1, 0}, Sort[uint]([]uint{0, 1, 2, 3, 4}, DESC))
 	})
 
+	t.Run("returns sorted array from @unpeacefulminds input suggestion", func(t *testing.T) {
+		assert.EqualValues(t, []uint64{1, 3, 4, 5, 7}, Sort[uint64]([]uint64{1, 5, 3, 7, 4}, ASC))
+		assert.EqualValues(t, []uint64{7, 5, 4, 3, 1}, Sort[uint64]([]uint64{1, 5, 3, 7, 4}, DESC))
+	})
+
 	t.Run("returns sorted array with random numbers fed into the array", func(t *testing.T) {
 		var numbers []int
 
