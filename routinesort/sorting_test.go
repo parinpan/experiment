@@ -1,7 +1,6 @@
 package routinesort
 
 import (
-	"fmt"
 	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"
@@ -30,8 +29,6 @@ func TestSort(t *testing.T) {
 
 		assert.EqualValues(t, []uint64{0, 1, 2, 3, 4}, Sort[uint64]([]uint64{4, 3, 2, 1, 0}, ASC))
 		assert.EqualValues(t, []uint{4, 3, 2, 1, 0}, Sort[uint]([]uint{0, 1, 2, 3, 4}, DESC))
-
-		fmt.Println(Sort[float64]([]float64{5, 3, 0, -1, 5, 100, 3, 4, 7}, DESC))
 	})
 
 	t.Run("returns sorted array with random numbers fed into the array", func(t *testing.T) {
